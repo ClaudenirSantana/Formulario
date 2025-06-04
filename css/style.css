@@ -133,7 +133,7 @@ input#mileage {
 
 .btn-submit {
   border-bottom: none;
-  background-color: #ffa500;
+  background-color: #01bd01;
   color: #fff;
   border: 2px solid transparent;
   width: 150px;
@@ -144,8 +144,25 @@ input#mileage {
   text-align: center;
 }
 
+.btn-submit[type="reset"] {
+  background-color: rgb(255, 0, 0);
+  border-color: rgb(255, 0, 0);
+  color: #fff;
+}
+
+.btn-submit[type="submit"] {
+  position: absolute;
+  left: 210px;
+}
+
 .btn-submit:hover {
   background-color: #fff;
-  border-color: #ffa500;
-  color: #ffa500;
+  border-color: #01bd01;
+  color: #01bd01;
+}
+
+.btn-submit[type="reset"]:hover {
+  background-color: #fff;
+  border-color: rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
 }
