@@ -42,6 +42,7 @@ textarea {
 
 /* page header */
 .header {
+  position: relative;
   height: 160px;
   padding: 20px;
   background-color: #ffa500;
@@ -54,9 +55,9 @@ textarea {
 }
 
 .header img {
-  position: relative;
-  top: -20px;
-  left: 1110px;
+  position: absolute;
+  top: 40px;
+  right: 50px;
   height: 80px;
   width: 80px;
 }
