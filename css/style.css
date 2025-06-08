@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Montserrat", "Gotham", "Trade Gothic", "Helvetica Neue";
 }
 
@@ -39,8 +40,8 @@ input[type="number"],
 input[type="date"],
 input[type="file"],
 textarea {
-  width: 400px;
   width: 100%;
+  max-width: 400px;
 }
 
 textarea {
@@ -77,10 +78,10 @@ input[name="conservation-title"] {
 
 .header img {
   position: absolute;
-  top: 40px;
-  right: 50px;
-  height: 80px;
-  width: 80px;
+  top: clamp(20px, 5vw, 40px);
+  right: clamp(10px, 5vw, 50px);
+  width: clamp(50px, 8vw, 80px);
+  height: clamp(50px, 8vw, 80px);
 }
 
 /* form container */
@@ -155,6 +156,49 @@ input#mileage {
   margin-bottom: 15px;
 }
 
+/* Botões */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between; /* alinhamento: reset esquerda, submit direita */
+  margin-top: 30px;
+}
+
+.btn-submit {
+  border: 2px solid transparent;
+  background-color: #01bd01;
+  color: #fff;
+  width: clamp(100px, 30%, 160px);
+  height: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.4s;
+  font-size: 14px;
+  text-align: center;
+  position: static; /* remove posição absoluta */
+}
+
+.btn-submit:hover {
+  background-color: #fff;
+  color: #01bd01;
+  border-color: #01bd01;
+}
+
+.btn-submit[type="reset"] {
+  background-color: rgb(255, 0, 0);
+  border-color: rgb(255, 0, 0);
+  color: #fff;
+  position: static; /* remove posição absoluta */
+}
+
+.btn-submit[type="reset"]:hover {
+  background-color: #fff;
+  color: rgb(255, 0, 0);
+  border-color: rgb(255, 0, 0);
+}
+
+/* Você tinha regras duplicadas para .btn-submit, mantive só uma consistente */
 .btn-submit {
   border-bottom: none;
   background-color: #01bd01;
@@ -174,11 +218,6 @@ input#mileage {
   color: #fff;
 }
 
-.btn-submit[type="submit"] {
-  position: absolute;
-  left: 210px;
-}
-
 .btn-submit:hover {
   background-color: #fff;
   border-color: #01bd01;
@@ -191,6 +230,7 @@ input#mileage {
   color: rgb(255, 0, 0);
 }
 
+/* MEDIA QUERIES */
 @media (max-width: 1024px) {
   .box-input textarea {
     margin-top: 3px;
@@ -203,16 +243,21 @@ input#mileage {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 481px) {
   .header h3 {
-    font-size: 27px;
+    font-size: clamp(20px, 5vw, 32px);
+  }
+
+  .header {
+    position: relative;
   }
 
   .header img {
-    height: 56px;
-    width: 56px;
-    margin-top: 17px;
+    position: absolute;
+    top: 55px;
     right: 20px;
+    height: 50px;
+    width: 50px;
   }
 
   .form-container {
@@ -225,7 +270,8 @@ input#mileage {
   input[type="date"],
   input[type="file"],
   textarea {
-    width: 340px;
+    width: 100%;
+    max-width: 340px;
   }
 
   .form-body p {
@@ -235,7 +281,7 @@ input#mileage {
 
 @media (max-width: 375px) {
   .header h3 {
-    font-size: 24px;
+    font-size: clamp(20px, 5vw, 32px);
   }
 
   .header img {
@@ -248,7 +294,8 @@ input#mileage {
   input[type="date"],
   input[type="file"],
   textarea {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
   }
 
   .box-input input::placeholder {
@@ -262,7 +309,8 @@ input#mileage {
   input[type="date"],
   input[type="file"],
   textarea {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
   }
 
   .box-input input::placeholder {
@@ -283,23 +331,23 @@ input#mileage {
 
   .btn-submit {
     width: 100px;
-    position: relative;
+    position: relative; /* volta ao relativo para telas pequenas */
   }
 
   .btn-submit[type="reset"] {
-    position: absolute;
+    position: static; /* removido absolute para alinhamento flex */
     width: 80px;
     height: 40px;
-    left: 3px;
-    bottom: 10px;
+    left: auto;
+    bottom: auto;
   }
 
   .btn-submit[type="submit"] {
-    position: absolute;
+    position: static; /* removido absolute para alinhamento flex */
     width: 80px;
     height: 40px;
-    left: 180px;
-    bottom: 10px;
+    left: auto;
+    bottom: auto;
   }
 
   input[type="file"] {
