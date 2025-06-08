@@ -237,9 +237,18 @@ input#mileage {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 821px) {
   .header img {
-    top: 60px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h3 {
+    font-size: clamp(20px, 5vw, 32px);
+  }
+  .header img {
+    top: 40px;
   }
 }
 
@@ -254,7 +263,7 @@ input#mileage {
 
   .header img {
     position: absolute;
-    top: 55px;
+    top: 16px;
     right: 20px;
     height: 50px;
     width: 50px;
