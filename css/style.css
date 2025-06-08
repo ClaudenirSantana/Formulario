@@ -28,16 +28,37 @@ input {
   padding: 10px 0;
 }
 
+.box-input textarea {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
 input[type="text"],
 input[type="number"],
 input[type="date"],
 input[type="file"],
 textarea {
   width: 400px;
+  width: 100%;
 }
 
 textarea {
   padding: 10px 5px;
+}
+
+input[name="conservation-title"] {
+  margin-top: 8px;
+  right: 10px;
+}
+
+.box-input input[type="radio"] {
+  margin-left: 6px;
+}
+
+.t {
+  margin-top: -8px;
+  cursor: pointer;
 }
 
 /* page header */
@@ -104,6 +125,8 @@ input#mileage {
 
 .form-body p {
   margin-bottom: 20px;
+  font-size: 15px;
+  color: #757575;
 }
 
 .required-field {
@@ -141,7 +164,7 @@ input#mileage {
   height: 50px;
   cursor: pointer;
   text-transform: uppercase;
-  transition: 0, 5s;
+  transition: 0.5s;
   text-align: center;
 }
 
@@ -166,4 +189,132 @@ input#mileage {
   background-color: #fff;
   border-color: rgb(255, 0, 0);
   color: rgb(255, 0, 0);
+}
+
+@media (max-width: 1024px) {
+  .box-input textarea {
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header img {
+    top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h3 {
+    font-size: 27px;
+  }
+
+  .header img {
+    height: 56px;
+    width: 56px;
+    margin-top: 17px;
+    right: 20px;
+  }
+
+  .form-container {
+    width: 90%;
+    top: -50px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="file"],
+  textarea {
+    width: 340px;
+  }
+
+  .form-body p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .header h3 {
+    font-size: 24px;
+  }
+
+  .header img {
+    width: 50px;
+    height: 50px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="file"],
+  textarea {
+    width: 300px;
+  }
+
+  .box-input input::placeholder {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  input[type="file"],
+  textarea {
+    width: 250px;
+  }
+
+  .box-input input::placeholder {
+    font-size: 11px;
+  }
+
+  .box-input textarea::placeholder {
+    font-size: 11px;
+  }
+
+  .form-body p {
+    font-size: 14px;
+  }
+
+  .form-title {
+    font-size: 25px;
+  }
+
+  .btn-submit {
+    width: 100px;
+    position: relative;
+  }
+
+  .btn-submit[type="reset"] {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    left: 3px;
+    bottom: 10px;
+  }
+
+  .btn-submit[type="submit"] {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    left: 180px;
+    bottom: 10px;
+  }
+
+  input[type="file"] {
+    width: 125px;
+  }
+
+  .optional-list {
+    font-size: 12px;
+  }
+
+  .conservacao {
+    font-size: 12px;
+  }
+
+  input[name="tipo-imovel"] + label {
+    font-size: 12px;
+  }
 }
