@@ -237,7 +237,7 @@ input#mileage {
   }
 }
 
-@media (max-width: 821px) {
+@media (max-width: 862px) {
   .header img {
     margin-top: 37px;
   }
