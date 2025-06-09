@@ -239,7 +239,7 @@ input#mileage {
 
 @media (max-width: 821px) {
   .header img {
-    margin-top: 40px;
+    margin-top: 37px;
   }
 }
 
@@ -373,5 +373,13 @@ input#mileage {
 
   input[name="tipo-imovel"] + label {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 308px) {
+  .header img {
+    height: 34px;
+    width: 34px;
+    margin-top: 50px;
   }
 }
