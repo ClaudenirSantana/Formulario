@@ -40,7 +40,7 @@ Tudo isso dentro de um layout limpo, moderno e responsivo.
 - Totalmente responsivo para tablets e celulares  
 
 ## ▶️ Link do site
-https://claudenirsantana.github.io/Formulario/
+- https://claudenirsantana.github.io/Formulario/
 
 ## 📎 Observações
 - O formulário é estático (não envia para backend).  
